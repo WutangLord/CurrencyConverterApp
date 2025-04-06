@@ -8,7 +8,7 @@ const CurrencyConverter = () => {
     const fetchCurrencies =async () => {
       try {
           const res = await fetch("https://v6.exchangerate-api.com/v6/9f78d38abd6d688f5ed90f53/latest/USD");
-          const data = res.json();
+          const data = await res.json();
 
           setCurrencies(data);
       } catch (error) {
