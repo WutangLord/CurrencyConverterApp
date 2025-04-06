@@ -1,8 +1,12 @@
 import { useState, useEffect } from "react";
+import CurrencyDropdown from "./currencyDropdown";
 
 const CurrencyConverter = () => {
   const [currencies, setCurrencies] = useState([]);
   const [amount, setAmount] = useState(1);
+
+    const [fromCurrency, setfromCurrency] = useState("USD");
+    const [toCurrency, settoCurrency] = useState("EUR")
 
   //Exchange rate API - : https://v6.exchangerate-api.com/v6/9f78d38abd6d688f5ed90f53/latest/USD
     const fetchCurrencies =async () => {
@@ -31,7 +35,11 @@ const CurrencyConverter = () => {
   return (
   <div className="max-w-2xl mx-auto my-11 p-6 bg-gray-100 rounded-3xl shadow-xl ">
     <h2 className="mb-7 text-3xl font-bold text-green-800">CurrencyConverter</h2>
-    <div>Dropdownbutton</div>
+    <div>
+      <CurrencyDropdown currencies={currencies} title="From:" />
+      {/*exchange currency button*/}
+      <CurrencyDropdown currencies={currencies} title="To:" />
+    </div>
 
     <div className="mt-4">
       <label htmlFor="amount" className="block text-sm font-semibold text-violet-700 ">Amount:</label>
