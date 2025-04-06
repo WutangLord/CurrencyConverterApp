@@ -7,8 +7,8 @@ const CurrencyDropdown = ({
     title = "",
 }) => {
   return (
-    <div>
-      <label className='block text-lg font-semibold text-red-700 ' htmlFor={title}>{title}</label>
+    <div className="mb-4 md:mb-0">
+      <label className='block text-lg font-semibold text-red-700 mb-2' htmlFor={title}>{title}</label>
       <select className='w-full p-2 border-gray-600 rounded-lg shadow-emerald-200 focus:outline-none focus:ring-4 focus:ring-violet-500'
         id={title}
         value={currency}
